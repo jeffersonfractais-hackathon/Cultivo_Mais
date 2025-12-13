@@ -1,12 +1,43 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import BottomNav from "@/components/BottomNav";
+import HomeTab from "@/components/HomeTab";
+import ProductionTab from "@/components/ProductionTab";
+import MatchesTab from "@/components/MatchesTab";
+import HelpTab from "@/components/HelpTab";
+import ProfileTab from "@/components/ProfileTab";
 
 const Index = () => {
+  const [activeTab, setActiveTab] = useState("home");
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case "home":
+        return <HomeTab />;
+      case "production":
+        return <ProductionTab />;
+      case "matches":
+        return <MatchesTab />;
+      case "help":
+        return <HelpTab />;
+      case "profile":
+        return <ProfileTab />;
+      default:
+        return <HomeTab />;
+    }
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      {/* Status Bar Spacer */}
+      <div className="h-12 bg-background" />
+      
+      {/* Main Content */}
+      <main className="px-4 pb-24">
+        {renderContent()}
+      </main>
+      
+      {/* Bottom Navigation */}
+      <BottomNav activeTab={activeTab} onTabChange={setActiveTab} />
     </div>
   );
 };
