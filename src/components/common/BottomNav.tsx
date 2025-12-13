@@ -1,11 +1,18 @@
-import { Home, Sprout, Handshake, HelpCircle, User } from "lucide-react";
+/**
+ * Navegação Inferior
+ * Adaptável para produtor e comprador
+ */
+
+import { Home, Sprout, Handshake, HelpCircle, User, Package, Users } from "lucide-react";
+import { UserType } from "@/types";
 
 interface BottomNavProps {
   activeTab: string;
   onTabChange: (tab: string) => void;
+  userType: UserType;
 }
 
-const navItems = [
+const producerNav = [
   { id: "home", label: "Início", icon: Home },
   { id: "production", label: "Produção", icon: Sprout },
   { id: "matches", label: "Vendas", icon: Handshake },
@@ -13,7 +20,16 @@ const navItems = [
   { id: "profile", label: "Perfil", icon: User },
 ];
 
-const BottomNav = ({ activeTab, onTabChange }: BottomNavProps) => {
+const buyerNav = [
+  { id: "home", label: "Início", icon: Home },
+  { id: "products", label: "Produtos", icon: Package },
+  { id: "producers", label: "Produtores", icon: Users },
+  { id: "profile", label: "Perfil", icon: User },
+];
+
+const BottomNav = ({ activeTab, onTabChange, userType }: BottomNavProps) => {
+  const navItems = userType === "producer" ? producerNav : buyerNav;
+
   return (
     <nav className="fixed bottom-0 left-0 right-0 bg-card border-t border-border safe-area-pb">
       <div className="flex justify-around items-center px-2 py-1">
