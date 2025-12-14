@@ -90,3 +90,8 @@ O modelo evita transferir custos para quem já está em situação de vulnerabil
 - Foco no pequeno produtor
 - Redução do desperdício
 - Fortalecimento da economia local
+
+---
+
+## Equipe: 18
+Gisele Oliveira; Jefferson Rafael; João Victor; Hugo Santos. 
