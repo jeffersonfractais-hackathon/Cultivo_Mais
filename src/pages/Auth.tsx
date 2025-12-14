@@ -5,7 +5,7 @@
  */
 
 import { useState } from 'react';
-import { Sprout, Store, ArrowLeft, ArrowRight, Check } from 'lucide-react';
+import { Leaf, Store, ArrowLeft, ArrowRight, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -70,9 +70,11 @@ const Auth = () => {
             {/* Logo */}
             <div className="text-center space-y-2">
               <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto">
-                <Sprout className="w-8 h-8 text-primary" />
+                <Leaf className="w-8 h-8 text-primary" />
               </div>
-              <h1 className="text-2xl font-bold text-foreground">AgroConecta</h1>
+              <h1 className="text-2xl font-bold text-foreground">
+                Cultivo<span className="text-primary">+</span>
+              </h1>
               <p className="text-muted-foreground">
                 Conectando quem produz com quem precisa
               </p>
@@ -198,7 +200,7 @@ const Auth = () => {
               >
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                    <Sprout className="w-6 h-6 text-primary" />
+                    <Leaf className="w-6 h-6 text-primary" />
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">
