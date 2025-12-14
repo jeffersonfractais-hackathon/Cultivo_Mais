@@ -1,5 +1,7 @@
 # 🌱 Cultivo+
 
+Link da plataforma: https://cultivo.lovable.app/
+
 **Cultivo+** é uma solução digital de impacto social que utiliza **geolocalização** e **inteligência artificial simples** para conectar pequenos agricultores com compradores próximos **no momento certo**, evitando o desperdício de alimentos, aumentando a renda do produtor e fortalecendo a segurança alimentar local.
 
 ---
