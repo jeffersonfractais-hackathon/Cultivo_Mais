@@ -1,5 +1,5 @@
 /**
- * Tipos centralizados do AgroConecta
+ * Tipos centralizados do Cultivo+
  * Facilita manutenção e consistência em todo o app
  */
 
@@ -8,6 +8,9 @@ export type UserType = 'producer' | 'buyer';
 
 // Status de documentos e validações
 export type DocumentStatus = 'valid' | 'warning' | 'invalid';
+
+// Níveis de risco
+export type RiskLevel = 'safe' | 'warning' | 'urgent';
 
 // Dados do usuário autenticado
 export interface User {
@@ -18,14 +21,13 @@ export interface User {
   phone?: string;
   location?: string;
   distance?: number;
-  // Específico do produtor
   cpf?: string;
   municipality?: string;
   productionTypes?: string[];
-  // Específico do comprador
   cnpj?: string;
   establishmentName?: string;
   establishmentType?: 'school' | 'ong' | 'food_bank' | 'commerce';
+  productInterests?: string[];
 }
 
 // Produção registrada pelo agricultor
@@ -74,11 +76,53 @@ export interface RegisterData {
   email: string;
   password: string;
   phone?: string;
-  // Produtor
   cpf?: string;
   municipality?: string;
-  // Comprador
   cnpj?: string;
   establishmentName?: string;
   establishmentType?: string;
 }
+
+// Alerta de risco inteligente
+export interface RiskAlert {
+  id: string;
+  productId: string;
+  productName: string;
+  level: RiskLevel;
+  daysRemaining: number;
+  reason: string;
+  recommendations: string[];
+  createdAt: Date;
+  dismissed?: boolean;
+}
+
+// Métricas do produtor
+export interface ProducerMetrics {
+  activeProducts: number;
+  monthlySales: number;
+  previousMonthSales: number;
+  conversionRate: number;
+  productsAtRisk: number;
+  pendingOrders: number;
+}
+
+// Notificação
+export interface Notification {
+  id: string;
+  type: 'order' | 'alert' | 'message' | 'promo' | 'system';
+  title: string;
+  message: string;
+  read: boolean;
+  createdAt: Date;
+  actionUrl?: string;
+}
+
+// Categorias de produtos de interesse
+export const PRODUCT_CATEGORIES = [
+  { id: 'hortalicas', label: 'Hortaliças', items: ['Alface', 'Tomate', 'Cenoura', 'Batata', 'Cebola', 'Couve'] },
+  { id: 'frutas', label: 'Frutas', items: ['Banana', 'Laranja', 'Maçã', 'Manga', 'Abacaxi', 'Morango'] },
+  { id: 'legumes', label: 'Legumes', items: ['Feijão', 'Abóbora', 'Abobrinha', 'Berinjela', 'Pepino'] },
+  { id: 'graos', label: 'Grãos', items: ['Milho', 'Arroz', 'Soja', 'Amendoim'] },
+  { id: 'organicos', label: 'Orgânicos', items: ['Produtos Orgânicos Certificados'] },
+  { id: 'outros', label: 'Outros', items: ['Ovos', 'Mel', 'Queijo', 'Leite'] },
+] as const;

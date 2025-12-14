@@ -5,6 +5,7 @@
 
 import { useState } from "react";
 import BottomNav from "@/components/common/BottomNav";
+import DashboardHeader from "@/components/common/DashboardHeader";
 import BuyerHome from "@/components/buyer/BuyerHome";
 import BuyerProducts from "@/components/buyer/BuyerProducts";
 import BuyerProducers from "@/components/buyer/BuyerProducers";
@@ -30,6 +31,7 @@ const BuyerDashboard = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <DashboardHeader userType="buyer" />
       <main className="px-4 py-6 pb-24">{renderContent()}</main>
       <BottomNav
         activeTab={activeTab}

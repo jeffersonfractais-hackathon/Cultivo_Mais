@@ -5,6 +5,7 @@
 
 import { useState } from "react";
 import BottomNav from "@/components/common/BottomNav";
+import DashboardHeader from "@/components/common/DashboardHeader";
 import ProducerHome from "@/components/producer/ProducerHome";
 import ProducerProduction from "@/components/producer/ProducerProduction";
 import ProducerMatches from "@/components/producer/ProducerMatches";
@@ -33,6 +34,7 @@ const ProducerDashboard = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <DashboardHeader userType="producer" />
       <main className="px-4 py-6 pb-24">{renderContent()}</main>
       <BottomNav
         activeTab={activeTab}
