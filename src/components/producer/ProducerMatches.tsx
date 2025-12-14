@@ -3,7 +3,7 @@
  * Sugere compradores com explicação do motivo
  */
 
-import { Brain, MapPin, Clock, Phone, MessageCircle, TrendingUp } from "lucide-react";
+import { Brain, MapPin, Clock, Check, X, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Dados mock de matches
@@ -132,13 +132,13 @@ const ProducerMatches = () => {
 
               {/* Ações */}
               <div className="flex gap-2">
-                <Button variant="outline" size="sm" className="flex-1">
-                  <Phone className="w-4 h-4 mr-2" />
-                  Ligar
+                <Button variant="outline" size="sm" className="flex-1 border-red-500/50 text-red-600 hover:bg-red-500/10">
+                  <X className="w-4 h-4 mr-2" />
+                  Rejeitar
                 </Button>
-                <Button size="sm" className="flex-1">
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  WhatsApp
+                <Button size="sm" className="flex-1 bg-emerald-600 hover:bg-emerald-700">
+                  <Check className="w-4 h-4 mr-2" />
+                  Aceitar
                 </Button>
               </div>
             </div>

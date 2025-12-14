@@ -8,9 +8,9 @@ import { HelpCircle, ChevronDown, ChevronUp, FileText, ExternalLink } from "luci
 
 const faqItems = [
   {
-    question: "O que é o AgroConecta?",
+    question: "O que é o Cultivo+?",
     answer:
-      "O AgroConecta conecta agricultores familiares a compradores como escolas, ONGs e comércios locais, facilitando a venda direta da produção.",
+      "O Cultivo+ conecta agricultores familiares a compradores como escolas, ONGs e comércios locais, facilitando a venda direta da produção.",
   },
   {
     question: "Como funciona o match com compradores?",
@@ -25,12 +25,12 @@ const faqItems = [
   {
     question: "Preciso pagar para usar o app?",
     answer:
-      "Não! O AgroConecta é gratuito para agricultores familiares. Nosso objetivo é reduzir o desperdício e conectar você a compradores.",
+      "Não! O Cultivo+ é gratuito para agricultores familiares. Nosso objetivo é reduzir o desperdício e conectar você a compradores.",
   },
   {
     question: "Como entro em contato com um comprador?",
     answer:
-      "Na aba 'Vendas', você verá os compradores sugeridos. Clique em 'Ligar' ou 'WhatsApp' para entrar em contato direto.",
+      "Na aba 'Vendas', você verá os compradores sugeridos. Ao aceitar uma sugestão, o contato é feito internamente pela plataforma.",
   },
 ];
 
